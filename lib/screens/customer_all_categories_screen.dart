@@ -53,9 +53,52 @@ class _CustomerAllCategoriesScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("CUSTOMER ALL CATEGORIES SCREEN"),
-      ),
+      backgroundColor: Theme.of(context).backgroundColor,
+      appBar: AppBar(backgroundColor: Theme.of(context).primaryColor),
+      body: Column(children: [
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          color: Colors.white,
+          margin: EdgeInsets.all(10),
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Search',
+              suffixIcon: Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColor,
+                  width: 2,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return InkWell(
+                // onTap: () => {
+                //   Navigator.pushNamed(
+                //     context,
+                //     CustomerAllCategoriesScreen.routeName,
+                //     arguments: testimonials[index].id,
+                //   )
+                // },
+                child: CustomerAllDetailScreenCategoryWidget(
+                    skillsCategories[index]['skillName'],
+                    skillsCategories[index]['skillImageUrl']),
+              );
+            },
+            itemCount: skillsCategories.length,
+          ),
+        ),
+      ]),
     );
   }
 }
