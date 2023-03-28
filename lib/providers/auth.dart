@@ -13,7 +13,7 @@ class Auth with ChangeNotifier {
   var user = User(
     id: '63d287b56d6aff5058660885',
     // id: '',
-    token: 'token',
+    token: '',//'''token',
     first_name: 'finson',
     last_name: 'Coutinho',
     email: 'NEW2302@gmail.com',
