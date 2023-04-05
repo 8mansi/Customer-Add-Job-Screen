@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               splashColor: Color.fromRGBO(24, 90, 219, 1),
               backgroundColor: Color.fromRGBO(239, 239, 239, 1),
             ),
-            home: auth.isAuth ? CustomerTabsScreen() : OnboardingScreen(),
+            home: auth.isAuth ? CustomerTabsScreen() : OtpScreen(),
             routes: {
               LoginScreen.routeName: (ctx) => LoginScreen(),
               RegisterScreen.routeName: (ctx) => RegisterScreen(),
